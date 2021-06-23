@@ -33,6 +33,31 @@ const divisoresPositivosDeUmNumero = (number) => {
   return soma
 }
 
+const testCache = () => {
+  const memoizedDivisoresPositivosDeUmNumero = memoizer(divisoresPositivosDeUmNumero)
+  const start_1 = new Date()
+  divisoresPositivosDeUmNumero(20)
+  const end_1 = new Date()
+
+  const start_2 = new Date()
+  memoizedDivisoresPositivosDeUmNumero(20)
+  const end_2 = new Date()
+
+  const duration_uncached = end_1.getTime() - start_1.getTime()
+  const duration_cached = end_2.getTime() - start_2.getTime()
+
+  if(duration_cached < duration_uncached) {
+    return true
+  }
+  
+  return {
+    duration_uncached, 
+    duration_cached
+  }
+}
+
+console.log(testCache());
+
 // console.log(divisoresPositivosDeUmNumero(20))
-const memoizedDivisoresPositivosDeUmNumero = memoizer(divisoresPositivosDeUmNumero)
-console.log(memoizedDivisoresPositivosDeUmNumero(20))
+// const memoizedDivisoresPositivosDeUmNumero = memoizer(divisoresPositivosDeUmNumero)
+// console.log(memoizedDivisoresPositivosDeUmNumero(20))
