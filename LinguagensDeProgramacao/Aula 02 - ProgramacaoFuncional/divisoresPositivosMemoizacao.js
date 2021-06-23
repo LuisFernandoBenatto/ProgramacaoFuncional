@@ -36,15 +36,3 @@ const divisoresPositivosDeUmNumero = (number) => {
 // console.log(divisoresPositivosDeUmNumero(20))
 const memoizedDivisoresPositivosDeUmNumero = memoizer(divisoresPositivosDeUmNumero)
 console.log(memoizedDivisoresPositivosDeUmNumero(20))
-
-// const somarDivisores = (a, b) => {
-//   return a + b
-// }
-// const divisoresPositivosDeUmNumero = (number) => {
-//   let arrayDivisores = []
-//   let result = 
-//     arrayDivisores.filter(determinarDivisores(number))
-//     .map((i) => number % i == 0)
-//     .reduce(somarDivisores, 0)
-//   return result
-// }
