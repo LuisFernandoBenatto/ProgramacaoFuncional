@@ -29,12 +29,12 @@ const divisoresPositivosDeUmNumero = (number) => {
 const testCache = () => {
   const memoizedDivisoresPositivosDeUmNumero = memoizer(divisoresPositivosDeUmNumero)
   const start_1 = Date.now()
-  memoizedDivisoresPositivosDeUmNumero(2000000000)
+  memoizedDivisoresPositivosDeUmNumero(20)
   const end_1 = Date.now() - start_1
   console.log(`Levou: ${end_1}ms`)
 
   const start_2 = Date.now()
-  memoizedDivisoresPositivosDeUmNumero(2000000000)
+  memoizedDivisoresPositivosDeUmNumero(20)
   const end_2 = Date.now() - start_2
   console.log(`Levou: ${end_2}ms`)
 
@@ -48,4 +48,4 @@ const testCache = () => {
   }
 }
 console.log(testCache());
-console.log("Resultado: " + divisoresPositivosDeUmNumero(2000000000))
+console.log("Resultado: " + divisoresPositivosDeUmNumero(20))
